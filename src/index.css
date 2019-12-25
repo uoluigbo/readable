@@ -11,3 +11,424 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #252525;
+  text-align: center;
+  background: #f3f3f3;
+}
+
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+.App {
+  max-width: 800px;
+  margin: 3% auto 0;
+  padding: 10px;
+}
+
+.content-wrapper {
+  background: white;
+  padding: 40px;
+}
+
+.error-message {
+  font-size: 14px;
+  color:red;
+  margin-bottom: 10px
+}
+
+.center {
+  text-align: center
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 15px auto;
+  padding: 8px;
+  border: 1px solid #434343;
+  cursor: pointer;
+  color: #434343;
+  background: #fff; 
+  font-size: 14px;
+  width: 62%;
+  position: relative;
+}
+
+.btn:hover:not(:disabled) {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 700;
+  border-width: 2px;
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.comments .btn {
+  margin-left: 10px;
+  width: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.category-nav .active {
+  text-decoration: underline;
+}
+
+.nav-wrapper {
+  padding: 0 10px;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 1px 10px rgba(0,0,0,.15), inset 0 -1px rgba(255,255,255,.8);
+  background: #fafafa;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: inline-block;
+  width: 100%;
+}
+
+.nav {
+  float: left;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li:first-child {
+  padding-left: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.category-nav {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.category-nav ul {
+ justify-content: center;
+}
+
+.category-nav li::first-letter {
+  text-transform: capitalize;
+ }
+
+ .category-nav a {
+  color: #009688;
+ }
+
+ .category-nav a:hover {
+  text-decoration: underline;
+ }
+
+.posts {
+  clear: both;
+}
+
+.card {
+  -webkit-box-shadow: rgba(0,0,0,.07) 0 1px 2px 0;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-property: box-shadow;
+  background: #fff;
+  box-shadow: rgba(0,0,0,.07) 0 1px 2px 0;
+  position: relative;
+  transition-duration: .5s;
+  transition-property: box-shadow;
+  margin-bottom: 10px;
+  padding: 20px 40px;
+  clear: both;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+}
+
+.card a:hover {
+  color: #009688;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.post-details .card-footer {
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+.vote {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.vote span {
+  border: 1px solid #009688;
+  padding: 0 5px;
+  color: #009688;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.vote span:first-of-type {
+  border-right: 0;
+}
+
+.vote span:hover {
+  background: #009688;
+  color: #fff;
+}
+
+.sort-wrapper {
+  text-align: right;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.form-wrapper {
+  margin-top: 50px;
+}
+
+.comments .form-wrapper {
+  margin-top: 20px;
+}
+
+.form-wrapper input, 
+.form-wrapper select, 
+.form-wrapper textarea {
+  padding: 5px 10px;
+  margin: 10px auto;
+  font-size: inherit;
+  background: transparent;
+  border: 1px solid #ccc;
+  outline: 0;
+  display: block;
+  height: 30px;
+  width: 100%;
+  max-width: 60%;
+}
+
+.form-wrapper select {
+  max-width: 62%;
+}
+
+.form-wrapper textarea {
+  height:300px;
+}
+
+.comments .form-wrapper input, 
+.comments .form-wrapper select, 
+.comments .form-wrapper textarea {
+  margin: 10px;
+  height: 20px;
+}
+
+.comments .form-wrapper textarea {
+  height:40px;
+}
+
+.sort-wrapper select {
+  font-size: inherit;
+  background: transparent;
+  border: 1px solid #ccc;
+  outline: 0;
+  margin-left: 10px;
+}
+
+.section-title h1 {
+  font-weight: normal;
+}
+
+.post-details {
+  text-align: left;
+}
+
+.post-details .section-title {
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-details .section-title p span,
+.comment-wrapper .comment-title p span {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.post-details .post-body {
+  margin: 40px 0;
+}
+
+span.separator {
+  color: #ccc;
+  padding: 0 10px;
+}
+
+.edit-post,
+.delete-post,
+.edit-comment,
+.delete-comment,
+.toggle-comment {
+  font-size: 12px;
+  border: none;
+  background: transparent;
+  color: #009688;
+  cursor: pointer;
+  padding: 0;
+}
+
+/*.edit-post:hover,
+.delete-post:hover {
+  font-weight: bold;
+}*/
+
+.toggle-comment {
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+
+.comments {
+  margin-top: 80px;
+  padding-bottom: 40px;
+}
+
+.comments .title-wrapper h4 {
+  color: #494848;
+  text-align: center;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.comments .title-wrapper h4 span {
+  background: #fff;
+  padding: 0 15px;
+}
+
+.comments hr {
+  border: 0;
+  border-top: 1px dotted #ccc;
+}
+
+.comment-body {
+  font-size: 14px;
+}
+
+.title-wrapper {
+  position: relative;
+}
+
+.comment-wrapper {
+  margin: 30px 40px;
+}
+
+.add-post .form-wrapper {
+  text-align: center;
+}
+
+.add-post .section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.add-post .close {
+  cursor: pointer;
+} 
+
+.add-post .close:hover {
+  color: #009688;
+} 
+
+.edit-post-modal {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}
+
+.edit-post-modal > div {
+  display: block;
+  position: relative;
+  margin: auto;
+  max-width: 700px;
+  width: 100%;
+  top: 10%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  box-shadow: 4px 4px 10px #555;
+}
+
+.edit-post-modal.active,
+.edit-post-modal.active > div {
+  display: block;
+}
+
+
+@media (max-width: 414px) {
+  body {
+    font-size: 12px;
+  }
+
+ .nav,
+ .nav-login-wrapper {
+   width: 50%;
+ }
+
+ .nav li,
+ .nav-login-wrapper li {
+  padding: 4.5%;
+ }
+}

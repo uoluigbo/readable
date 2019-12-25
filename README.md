@@ -19,7 +19,7 @@ A new post is added here.
 A new account can be created here.
 
 ## Installing and running
-* clone from: https://github.com/uoluigbo/reactnd-would-you-rather.git
+* clone from: https://github.com/uoluigbo/readable.git
 
 * Run commands: npm install or yarn install
 

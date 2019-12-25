@@ -93,7 +93,7 @@ class AddPost extends Component {
 
 
   render() {
-    const { categories, post, postId } = this.props
+    const { categories, postId } = this.props
     let { title, author, category, body } = this.state
 
     const selected = category ? category : 'select'

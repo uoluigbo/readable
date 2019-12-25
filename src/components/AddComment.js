@@ -11,7 +11,7 @@ class AddComment extends Component {
   }
 
   componentDidMount() {
-    const { comment, dispatch } = this.props
+    const { comment } = this.props
   
     if( Object.keys(comment).length > 0 ) {
       this.setState(() => ({
@@ -75,7 +75,7 @@ class AddComment extends Component {
   }
 
     render() {
-      const { comment, commentId } = this.props
+      const { commentId } = this.props
 
       const { author, body } = this.state
 

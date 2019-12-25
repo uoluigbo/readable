@@ -13,12 +13,12 @@ export function receiveCategories(categories) {
 
 export function handleReceiveCategories() {
     return (dispatch) => {
-        //dispatch(showLoading())
+        dispatch(showLoading())
 
         return getAllCategories()
             .then((categories) => {
                 dispatch(receiveCategories(categories))
-                //dispatch(hideLoading())
+                dispatch(hideLoading())
             })
             
     }

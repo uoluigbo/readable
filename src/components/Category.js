@@ -10,7 +10,6 @@ class Category extends Component {
 
       return (
         <div className="category-posts">
-          <h1>Readable Blog</h1>
           <Posts categoryId={categoryId} />
         </div>
       )

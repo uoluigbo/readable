@@ -22,6 +22,7 @@ class Nav extends Component {
                         </ul>
                         
                     </nav>
+                    <h1>Readable Blog</h1>
                 </div>
         </div>
         )

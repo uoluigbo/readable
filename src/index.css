@@ -138,6 +138,7 @@ li {
 .category-nav {
   width: 100%;
   margin-bottom: 20px;
+  background: #f3f3f3;
 }
 
 .category-nav ul {
@@ -405,7 +406,6 @@ span.separator {
   width: 100%;
   top: 10%;
   background-color: #fff;
-  padding: 10px;
   border-radius: 5px;
   border: 1px solid #fff;
   box-shadow: 4px 4px 10px #555;
@@ -414,6 +414,10 @@ span.separator {
 .edit-post-modal.active,
 .edit-post-modal.active > div {
   display: block;
+}
+
+.edit-post-modal .content-wrapper {
+  padding: 20px 40px;
 }
 
 

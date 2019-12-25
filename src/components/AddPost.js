@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { handleReceiveCategories } from '../actions/categories'
 import { handleAddPost, handleModifyPost } from '../actions/posts'
 import { generateUID } from '../utils/helpers'
+import CategoryNav from './CategoryNav'
 
 class AddPost extends Component {
   state = {
@@ -100,62 +101,66 @@ class AddPost extends Component {
 
 
     return (
-      <div className="add-post content-wrapper">
-        <div className="section-title">
-          <h1>{postId ? 'Edit' : 'Add'} Post</h1>
-          {postId &&
-            <span className="close" onClick={this.handleCloseModal}>X</span>
-          }
-          
-        </div>
-        <div className="form-wrapper">
-          <form onSubmit={this.handleSubmit} >
-            {
-              !postId &&
-              <div>
-                <select value={selected} name="category" onChange={this.handleChange}>
-                  <option value="select">Select Category</option>
-                  {
-                    categories.map((cat) => (
-                      <option 
-                        key={cat.name} 
-                        value={cat.name} 
-                        onChange={this.handleChange}  
-                        >{cat.name}
-                      </option>
-                    ))
-                  }
-                </select>
-              </div>
+      <div>
+        {!postId &&
+          <CategoryNav />
+        }
+        <div className="add-post content-wrapper">
+          <div className="section-title">
+            <h1>{postId ? 'Edit' : 'Add'} Post</h1>
+            {postId &&
+              <span className="close" onClick={this.handleCloseModal}>X</span>
             }
-            {
-              !postId &&
+            
+          </div>
+          <div className="form-wrapper">
+            <form onSubmit={this.handleSubmit} >
+              {
+                !postId &&
+                <div>
+                  <select value={selected} name="category" onChange={this.handleChange}>
+                    <option value="select">Select Category</option>
+                    {
+                      categories.map((cat) => (
+                        <option 
+                          key={cat.name} 
+                          value={cat.name} 
+                          onChange={this.handleChange}  
+                          >{cat.name}
+                        </option>
+                      ))
+                    }
+                  </select>
+                </div>
+              }
+              {
+                !postId &&
+                <div>
+                  <input name="author" value={author} onChange={this.handleChange} placeholder="Enter author's name" />
+                </div>
+              }
               <div>
-                <input name="author" value={author} onChange={this.handleChange} placeholder="Enter author's name" />
+                <input name="title" value={title} onChange={this.handleChange} placeholder='Enter title' />
               </div>
-            }
-            <div>
-              <input name="title" value={title} onChange={this.handleChange} placeholder='Enter title' />
-            </div>
-            <div>
-              <textarea 
-                name="body" 
-                onChange={this.handleChange} 
-                value={body} 
-                placeholder='Enter post body' />
-            </div>
-            <div>
-              <button
-                className="btn"
-                type='submit'
-                disabled={this.checkFormFilled()}
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+              <div>
+                <textarea 
+                  name="body" 
+                  onChange={this.handleChange} 
+                  value={body} 
+                  placeholder='Enter post body' />
+              </div>
+              <div>
+                <button
+                  className="btn"
+                  type='submit'
+                  disabled={this.checkFormFilled()}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        
       </div>
       )
     }

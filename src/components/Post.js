@@ -57,7 +57,7 @@ class Post extends Component {
     return (
       <div className='card'>
         <div className="card-body">
-            <Link to={`/posts/${post.id}`}><h2>{post.title}</h2></Link>
+            <Link to={`/category/${post.id}`}><h2>{post.title}</h2></Link>
             <div>
               {post.author} . <span>{formatDate(post.timestamp)}</span>
             </div>

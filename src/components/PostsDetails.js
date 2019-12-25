@@ -8,6 +8,7 @@ import { handleReceivePostComments } from '../actions/comments'
 import Comment from './Comment'
 import AddComment from './AddComment'
 import AddPost from './AddPost'
+import CategoryNav from './CategoryNav'
 
 class PostDetails extends Component {
   state = {
@@ -24,7 +25,6 @@ class PostDetails extends Component {
     }
 
     dispatch(handleReceivePostComments(postId))
-    //this.setState(() => ({ voteScore: post.voteScore }))
   }
 
   handleVote = (e) => {
@@ -75,57 +75,60 @@ class PostDetails extends Component {
     }
 
     return (
-      <div className="post-details content-wrapper">
-        <div className="section-title">
-          <h1>{post.title}</h1>
-          <p>
-            By: {post.author}
-            <span>{formatDate(post.timestamp)}</span>
-          </p>
-          
-        </div>
-        <div className="post-body">
-          {post.body}
-        </div>
-        <div className='card-footer'> 
-          <div className='comment-count'>Comments: {post.commentCount}</div> 
-           <span className="separator">|</span>  
-          <div className='post-votes'>
-              Votes: { post.voteScore }
-              <div className='vote'>
-                <span className='increase-vote' onClick={ this.handleVote }>+</span>
-                <span className='decrease-vote' onClick={ this.handleVote }>-</span>
-              </div>
+      <div>
+        <CategoryNav />
+        <div className="post-details content-wrapper">
+          <div className="section-title">
+            <h1>{post.title}</h1>
+            <p>
+              By: {post.author}
+              <span>{formatDate(post.timestamp)}</span>
+            </p>
+            
           </div>
-          <div className='update-post'>
-            <span className="separator">|</span> <button className="edit-post" onClick={this.handleTogglePostBlock}>Edit Post</button>
-            <span className="separator">|</span> <button className="delete-post" onClick={this.deletePost}>Delete Post</button>
+          <div className="post-body">
+            {post.body}
           </div>
-          
-      </div>
-      <div className="comments">
-        <div className="title-wrapper">
-          <h4><span>Comments</span></h4>
-          <button className="toggle-comment" onClick={this.handleToggleCommentBlock}>Add Comment</button>
+          <div className='card-footer'> 
+            <div className='comment-count'>Comments: {post.commentCount}</div> 
+            <span className="separator">|</span>  
+            <div className='post-votes'>
+                Votes: { post.voteScore }
+                <div className='vote'>
+                  <span className='increase-vote' onClick={ this.handleVote }>+</span>
+                  <span className='decrease-vote' onClick={ this.handleVote }>-</span>
+                </div>
+            </div>
+            <div className='update-post'>
+              <span className="separator">|</span> <button className="edit-post" onClick={this.handleTogglePostBlock}>Edit Post</button>
+              <span className="separator">|</span> <button className="delete-post" onClick={this.deletePost}>Delete Post</button>
+            </div>
+            
         </div>
-        {
-          toggleCommentBlock &&
-            <AddComment postId={post.id} toggleCommentBlock={this.handleToggleCommentBlock}  />
-        }
-          
-         {
-           comments.map((comment) => (
-             <Comment key={comment.id} commentId={comment.id} />
-           ))
-         }
-          
-        </div>
-        {
-          togglePostBlock &&
-          <div className="edit-post-modal active">
-            <AddPost postId={post.id} togglePostBlock={this.handleTogglePostBlock} closeModal={this.handleCloseModal} />
+        <div className="comments">
+          <div className="title-wrapper">
+            <h4><span>Comments</span></h4>
+            <button className="toggle-comment" onClick={this.handleToggleCommentBlock}>Add Comment</button>
           </div>
-        }
+          {
+            toggleCommentBlock &&
+              <AddComment postId={post.id} toggleCommentBlock={this.handleToggleCommentBlock}  />
+          }
+            
+          {
+            comments.map((comment) => (
+              <Comment key={comment.id} commentId={comment.id} />
+            ))
+          }
+            
+          </div>
+          {
+            togglePostBlock &&
+            <div className="edit-post-modal active">
+              <AddPost postId={post.id} togglePostBlock={this.handleTogglePostBlock} closeModal={this.handleCloseModal} />
+            </div>
+          }
+        </div>
       </div>
     )
   }

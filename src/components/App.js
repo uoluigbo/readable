@@ -25,7 +25,7 @@ class App extends Component {
                   <Route path='/page-not-found' component={PageNotFound} />
                   <Route path='/' exact component={Dashboard} />
                   <Route path='/:categoryId' exact component={Categroy} />
-                  <Route path='/category/:postId' component={PostsDetails} />
+                  <Route path='/:categoryId/:postId' component={PostsDetails} />
                   <Route path='*' component={PageNotFound}/>
                 </Switch> 
             </div>
